@@ -1,26 +1,75 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+:root {
+  /* Backgrounds */
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #f1efe8;
+  --color-background-tertiary: #e8e6de;
+  --color-background-info: #e6f1fb;
+  --color-background-danger: #fcebeb;
+  --color-background-success: #eaf3de;
+  --color-background-warning: #faeeda;
+
+  /* Text */
+  --color-text-primary: #2c2c2a;
+  --color-text-secondary: #5f5e5a;
+  --color-text-tertiary: #888780;
+  --color-text-info: #0c447c;
+  --color-text-danger: #a32d2d;
+  --color-text-success: #3b6d11;
+  --color-text-warning: #854f0b;
+
+  /* Borders */
+  --color-border-tertiary: rgba(0, 0, 0, 0.12);
+  --color-border-secondary: rgba(0, 0, 0, 0.22);
+  --color-border-primary: rgba(0, 0, 0, 0.38);
+  --color-border-info: #b5d4f4;
+  --color-border-danger: #f7c1c1;
+  --color-border-success: #c0dd97;
+  --color-border-warning: #fac775;
+
+  /* Typography */
+  --font-sans: system-ui, -apple-system, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: ui-monospace, monospace;
+
+  /* Border radius */
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 16px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+    /* Backgrounds */
+    --color-background-primary: #1c1c1a;
+    --color-background-secondary: #2c2c2a;
+    --color-background-tertiary: #3a3a37;
+    --color-background-info: #042c53;
+    --color-background-danger: #501313;
+    --color-background-success: #173404;
+    --color-background-warning: #412402;
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    /* Text */
+    --color-text-primary: #f1efe8;
+    --color-text-secondary: #b4b2a9;
+    --color-text-tertiary: #888780;
+    --color-text-info: #85b7eb;
+    --color-text-danger: #f09595;
+    --color-text-success: #97c459;
+    --color-text-warning: #ef9f27;
+
+    /* Borders */
+    --color-border-tertiary: rgba(255, 255, 255, 0.12);
+    --color-border-secondary: rgba(255, 255, 255, 0.22);
+    --color-border-primary: rgba(255, 255, 255, 0.38);
+    --color-border-info: #185fa5;
+    --color-border-danger: #791f1f;
+    --color-border-success: #3b6d11;
+    --color-border-warning: #854f0b;
+  }
 }

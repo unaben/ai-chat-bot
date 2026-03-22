@@ -1,0 +1,16 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 512px;
+  
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+  
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
