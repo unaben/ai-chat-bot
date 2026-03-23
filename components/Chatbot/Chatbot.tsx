@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { personalData } from "../../data/personalData";
 import useGemini from "../../hooks/useGemini";
 import { SUGGESTED_QUESTIONS } from "@/constants";
@@ -11,9 +11,8 @@ import styles from "./Chatbot.module.css";
 const Chatbot: React.FC = () => {
   const [input, setInput] = useState("");
   const { messages, loading, error, sendMessage, clearMessages } = useGemini();
-  const bottomRef = useRef<HTMLDivElement>(null);
 
-  useChatScroll<Array<Message>>(messages, loading);
+  const bottomRef = useChatScroll<Array<Message>>(messages, loading);
 
   const handleSend = async (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -30,7 +29,7 @@ const Chatbot: React.FC = () => {
           <span className={styles.avatar}>🤖</span>
           <div>
             <h2 className={styles.title}>
-              Ask about {personalData.name.split(" ")[0]} or anything else 😊
+              Ask about {personalData.name.split(" ")[0]}, or anything else
             </h2>
             <p className={styles.subtitle}>Powered by Gemini 2.5 Flash</p>
           </div>
