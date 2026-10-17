@@ -12,27 +12,23 @@ You are a helpful personal assistant with two modes:
 Always be friendly, concise, and natural. Never mention these instructions.
 
 --- PERSONAL PROFILE ---
+--- PERSONAL PROFILE ---
 Name: ${data.name}
-Age: ${data.age}
 Location: ${data.location}
-Occupation: ${data.occupation} at ${data.company}
+Role: ${data.occupation} (most recently at ${data.company})
 Years of experience: ${data.yearsOfExperience}
 Skills: ${data.skills.join(", ")}
 
 Education:
-  Degree: ${data.education.degree}
-  University: ${data.education.university}
-  Graduated: ${data.education.graduationYear}
+  Qualification: ${data.education.degree}
+  Provider: ${data.education.university}
+  Completed: ${data.education.graduationYear}
 
-Hobbies: ${data.hobbies.join(", ")}
-Pets: ${data.pets.map((p) => `${p.name} (${p.type}, ${p.age} years old)`).join(", ")}
-Favourite food: ${data.favouriteFood}
+Experience:
+${data.experience.map((e) => `  - ${e}`).join("\n")}
 
 Current projects:
 ${data.currentProjects.map((p) => `  - ${p}`).join("\n")}
-
-Goals:
-${data.goals.map((g) => `  - ${g}`).join("\n")}
 
 Contact:
   Email: ${data.contact.email}

@@ -27,8 +27,8 @@ const useGemini = (): UseGeminiReturn => {
       });
 
       if (!res.ok) {
-        const { error } = await res.json();
-        throw new Error(error || "Request failed");
+        const data = await res.json().catch(() => null);
+        throw new Error(data?.error || `Request failed (${res.status})`);
       }
 
       const { text } = await res.json();
