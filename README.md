@@ -1,5 +1,7 @@
 # Personal AI Chatbot
 
+Live: https://ai-chat-bot-silk-six.vercel.app/
+
 A Next.js chatbot powered by **Google Gemini 2.5 Flash** via the Vercel AI SDK. Answers questions about a specific person using injected personal data (RAG-lite via system prompt), while also handling general questions.
 
 ---
