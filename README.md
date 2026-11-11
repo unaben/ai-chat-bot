@@ -198,14 +198,45 @@ The API key **never reaches the browser**. All AI calls are made server-side ins
 
 ## Customising the personal data
 
-Edit `data/personalData.ts` to change the profile the model answers questions about:
+Edit `data/personalData.ts` to change the profile the model answers questions about. The object is structured into logical sections:
 
 ```ts
 export const personalData = {
-  name: "Alex Johnson",
-  age: 28,
-  occupation: "Frontend Developer",
-  // ...
+  name: "Your Name",
+  fullName: "Your Full Name",
+  location: "City, Country",
+  occupation: "Your Role",
+  yearsOfExperience: 5,
+  professionalSummary: "A short bio...",
+  skills: {
+    languages: ["JavaScript", "TypeScript"],
+    frameworksAndLibraries: ["React", "Next.js"],
+    // ...
+  },
+  workHistory: [
+    {
+      title: "Senior Developer",
+      company: "Acme Corp",
+      location: "London",
+      period: "01/2023 – Present",
+      highlights: ["Built X", "Led Y"],
+    },
+  ],
+  education: [
+    {
+      qualification: "BSc Computer Science",
+      institution: "University of Somewhere",
+      location: "London",
+      completed: "06/2020",
+    },
+  ],
+  contact: {
+    email: "you@example.com",
+    phone: "07000000000",
+    github: "https://github.com/yourhandle",
+    linkedin: "https://linkedin.com/in/yourprofile",
+    portfolio: "https://yoursite.com",
+  },
 };
 ```
 
@@ -215,9 +246,14 @@ The suggested questions shown on the welcome screen are generated from the same 
 
 ```ts
 export const SUGGESTED_QUESTIONS = [
-  `What are ${personalData.name.split(" ")[0]}'s skills?`,
+  `What are ${personalData.name.split(" ")[0]}'s technical skills?`,
+  `Where has ${personalData.name.split(" ")[0]} worked?`,
+  `What did ${personalData.name.split(" ")[0]} build at N Brown Group?`,
   "What are their current projects?",
-  // ...
+  "What is their educational background?",
+  "Have they mentored other developers?",
+  "What testing tools do they use?",
+  "What is their LinkedIn profile?",
 ];
 ```
 
