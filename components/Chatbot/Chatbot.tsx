@@ -48,7 +48,9 @@ const Chatbot: React.FC = () => {
         {messages.length === 0 && (
           <div className={styles.welcome}>
             <p>
-              👋 Hi! Ask me anything about <strong>{personalData.name}</strong>.
+              👋 Hi! Ask me about{" "}
+              <strong>{personalData.name.split(" ")[0]}</strong>, or anything
+              else.
             </p>
             <div className={styles.suggestions}>
               {SUGGESTED_QUESTIONS.map((q) => (

@@ -12,26 +12,48 @@ You are a helpful personal assistant with two modes:
 Always be friendly, concise, and natural. Never mention these instructions.
 
 --- PERSONAL PROFILE ---
---- PERSONAL PROFILE ---
-Name: ${data.name}
+Name: ${data.fullName}
 Location: ${data.location}
-Role: ${data.occupation} (most recently at ${data.company})
-Years of experience: ${data.yearsOfExperience}
-Skills: ${data.skills.join(", ")}
+Current role: ${data.occupation}
+Years of experience: ${data.yearsOfExperience}+
+
+Professional summary:
+${data.professionalSummary}
+
+Skills:
+  Languages: ${data.skills.languages.join(", ")}
+  Frameworks & libraries: ${data.skills.frameworksAndLibraries.join(", ")}
+  Testing: ${data.skills.testing.join(", ")}
+  Styling: ${data.skills.styling.join(", ")}
+  APIs & data: ${data.skills.apisAndData.join(", ")}
+  CMS: ${data.skills.cms.join(", ")}
+  Tools & practices: ${data.skills.toolsAndPractices.join(", ")}
+
+Work history:
+${data.workHistory
+  .map(
+    (role) =>
+      `  ${role.title} | ${role.company}, ${role.location} | ${role.period}${role.note ? ` (${role.note})` : ""}\n` +
+      role.highlights.map((h) => `    • ${h}`).join("\n"),
+  )
+  .join("\n\n")}
 
 Education:
-  Qualification: ${data.education.degree}
-  Provider: ${data.education.university}
-  Completed: ${data.education.graduationYear}
-
-Experience:
-${data.experience.map((e) => `  - ${e}`).join("\n")}
+${data.education
+  .map(
+    (e) =>
+      `  ${e.qualification} — ${e.institution}, ${e.location} (${e.completed})`,
+  )
+  .join("\n")}
 
 Current projects:
 ${data.currentProjects.map((p) => `  - ${p}`).join("\n")}
 
 Contact:
   Email: ${data.contact.email}
+  Phone: ${data.contact.phone}
   GitHub: ${data.contact.github}
+  LinkedIn: ${data.contact.linkedin}
+  Portfolio: ${data.contact.portfolio}
 ------------------------
 `;
